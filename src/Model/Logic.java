@@ -24,7 +24,7 @@ public class Logic extends PApplet {
 				app);
 		square = new Square(50, 50, 50, 1, 250, 0, 250, 10, app);
 
-		loadTXT = app.loadStrings("../data/TXT.txt");
+		loadTXT = app.loadStrings("../data/Parametros.txt");
 		words = new ArrayList<String>();
 
 		for (int i = 0; i < loadTXT.length; i++) {
@@ -63,7 +63,7 @@ public class Logic extends PApplet {
 		int g = (int) random(0, 250);
 		int b = (int) random(0, 255);
 
-		int randomFig = (int) random(0, 2); // Random status to create a figure between circle and square
+		int randomFig = (int) random(0, 2); // Random status to create a triangle when circle and square crossed
 
 		if (app.mouseButton == RIGHT) {
 			switch (randomFig) {
@@ -92,15 +92,14 @@ public class Logic extends PApplet {
 	public void hit() {
 		boolean removed = false;
 		for (int i = 0; i < figure.size() && removed == false; i++) {
-
 			for (int j = 0; j < figure.size() && removed == false; j++) {
 				if (!(figure.get(i) instanceof Triangle) && !(figure.get(j) instanceof Triangle)) {
 					if (i != j) {
 						if (PApplet.dist(figure.get(i).getPosX(), figure.get(i).getPosY(), figure.get(j).getPosX(),
 								figure.get(j).getPosY()) <= figure.get(i).getTam() / 2 + figure.get(j).getTam() / 2) {
 
-							addTriangle(figure.get(i).getPosX(), // posx to draw triangle
-									figure.get(i).getPosY(), // posY to draw triangle
+							addTriangle(figure.get(i).getPosX(), // posX of the triangle
+									figure.get(i).getPosY(), // posY of the triangle
 									figure.get(i).getValue() + figure.get(j).getValue());
 
 							figure.remove(j);// Remove First figure
