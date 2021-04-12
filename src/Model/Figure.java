@@ -1,5 +1,4 @@
 package Model;
-
 import processing.core.PApplet;
 
 public abstract class Figure extends PApplet {

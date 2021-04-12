@@ -1,9 +1,17 @@
 package View;
+import Controller.Controller;
+import processing.core.PApplet;
 
-public class Main {
+public class Main extends PApplet{
 
-	public Main() {
-		// TODO Auto-generated constructor stub
+	public static void main(String[] args) {
+		PApplet.main(Main.class.getName());
 	}
-
+	
+	Controller controller;
+	
+	public void settings() {
+		size(500,500);
+	}
 }
+	
