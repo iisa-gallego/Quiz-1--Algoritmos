@@ -19,10 +19,10 @@ public class Logic extends PApplet {
 		this.app = app;
 
 		app.rectMode(CENTER);
-		circle = new Circle(50, 50, 50, 1, 255, 0, 255, 10, app);
+		circle = new Circle(50, 50, 50, 1, 250, 0, 250, 10, app);
 		triangle = new Triangle(50, 50, 50, 1, (int) random(0, 255), (int) random(0, 255), (int) random(0, 255), 10,
 				app);
-		square = new Square(50, 50, 50, 1, 255, 0, 255, 10, app);
+		square = new Square(50, 50, 50, 1, 250, 0, 250, 10, app);
 
 		loadTXT = app.loadStrings("../data/TXT.txt");
 		words = new ArrayList<String>();
@@ -54,13 +54,13 @@ public class Logic extends PApplet {
 	public void addRandomFig() {
 
 		int tam = (int) random(10, 80);
-		int posX = (int) random(10, 580);
+		int posX = (int) random(10, 480);
 		int posY = (int) random(30, 100);
 		int direction = 1;
 		int value = (int) random(0, 11);
 
 		int r = (int) random(0, 255);
-		int g = (int) random(0, 255);
+		int g = (int) random(0, 250);
 		int b = (int) random(0, 255);
 
 		int randomFig = (int) random(0, 2); // Random status to create a figure between circle and square
